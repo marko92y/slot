@@ -1,4 +1,4 @@
-import { PixiComponent, Sprite } from "react-pixi-fiber/index";
+import { PixiComponent, Sprite, DisplayObjectProps } from "react-pixi-fiber/index";
 import crown from "../assets/1.png";
 import grape from "../assets/2.png";
 import bell from "../assets/3.png";
@@ -37,21 +37,21 @@ const [
   Gift,
   Watermelon,
 ] = [
-  (props: PixiComponent) => SlotToken({ textureLink: crown, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: grape, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: bell, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: heart, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: strawberry, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: diamond, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: cherry, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: lemon, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: goldBag, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: hearts, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: bar, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: chips, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: apple, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: gift, ...props }),
-  (props: PixiComponent) => SlotToken({ textureLink: watermelon, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: crown, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: grape, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: bell, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: heart, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: strawberry, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: diamond, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: cherry, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: lemon, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: goldBag, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: hearts, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: bar, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: chips, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: apple, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: gift, ...props }),
+  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: watermelon, ...props }),
 ];
 
 const tokenMap = {
