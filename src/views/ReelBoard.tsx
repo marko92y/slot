@@ -2,6 +2,7 @@ import React from "react";
 import { Stage } from "react-pixi-fiber/index.js";
 import { tokenMap } from "../sprites/SlotToken";
 import Reel from "./Reel";
+import Rectangle from "../sprites/Rectangle";
 
 interface RealBoardType {
   reels: (keyof typeof tokenMap)[][];
@@ -9,7 +10,7 @@ interface RealBoardType {
 }
 
 const options = {
-  backgroundColor: 0x1099bb,
+  backgroundColor: 0x000000,
   resolution: window.devicePixelRatio,
   width: 700,
   height: 300,
@@ -30,6 +31,8 @@ const ReelBoard = ({ reels, targetList }: RealBoardType) => {
       <Reel tokenList={reels[2]} target={targetList[2]} right={240} reelHight={300} speed={90} />
       <Reel tokenList={reels[3]} target={targetList[3]} right={360} reelHight={300} speed={120} />
       <Reel tokenList={reels[4]} target={targetList[4]} right={480} reelHight={300} speed={150} />
+      <Rectangle x={0} y={100} width={700} height={3} fill={0xdeffffff} />
+      <Rectangle x={0} y={200} width={700} height={3} fill={0xdeffffff} />
     </Stage>
   );
 };
