@@ -55,21 +55,21 @@ const [
 ];
 
 const tokenMap = {
-  // crown: Crown,
-  // grape: Grape,
-  // bell: Bell,
-  // heart: Heart,
-  // strawberry: Strawberry,
+  crown: Crown,
+  grape: Grape,
+  bell: Bell,
+  heart: Heart,
+  strawberry: Strawberry,
   diamond: Diamond,
   cherry: Cherry,
   lemon: Lemon,
   goldBag: GoldBag,
-  // hearts: Hearts,
-  // bar: Bar,
-  // chips: Chips,
-  // apple: Apple,
-  // gift: Gift,
-  // watermelon: Watermelon,
+  hearts: Hearts,
+  bar: Bar,
+  chips: Chips,
+  apple: Apple,
+  gift: Gift,
+  watermelon: Watermelon,
 };
 
 export {
