@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS
 template.
 
-<img src="https://github.com/marko92y/slot/src/assets/slot.png" />
+![alt text](https://github.com/marko92y/slot/blob/master/src/assets/slot.png?raw=true)
 
 ## Available Scripts
 
