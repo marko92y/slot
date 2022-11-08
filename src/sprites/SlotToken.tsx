@@ -55,15 +55,15 @@ const [
 ];
 
 const tokenMap = {
-  crown: Crown,
-  grape: Grape,
-  bell: Bell,
+  // crown: Crown,
+  // grape: Grape,
+  // bell: Bell,
   // heart: Heart,
   // strawberry: Strawberry,
-  // diamond: Diamond,
-  // cherry: Cherry,
-  // lemon: Lemon,
-  // goldBag: GoldBag,
+  diamond: Diamond,
+  cherry: Cherry,
+  lemon: Lemon,
+  goldBag: GoldBag,
   // hearts: Hearts,
   // bar: Bar,
   // chips: Chips,

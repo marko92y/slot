@@ -29,12 +29,13 @@ const calcWinStatus = (
 
 function GameScreen() {
   const reelLen = 50;
-  const [reels, setReels] = useState(Array.apply(null, Array(5)).map((e) => genTokenList(reelLen)));
+  const [reels, setReels] = useState(Array.apply(null, Array(5)).map((e) => genTokenList(7)));
   const [midHLine, setMidHLine] = useState<[number, number, number, number, number]>([
     2, 2, 2, 2, 2,
   ]);
-  const [winMessage, setWinMessage] = useState("Spinning...");
+  const [winMessage, setWinMessage] = useState("Ready to start.");
   const winStatus = useMemo(() => calcWinStatus(reels, midHLine), [reels, midHLine]);
+  const [spinning, setSpinning] = useState(true);
   const [balance, bet] = useSelector<RootState, [number, number]>((state) => [
     state.pot.balance,
     state.pot.bet,
@@ -43,6 +44,8 @@ function GameScreen() {
   const dispatch = useDispatch();
 
   const spin = () => {
+    setSpinning(true);
+    window.setTimeout(() => setSpinning(false), 11000);
     setWinMessage("Spinning...");
     setReels((prev) => {
       return Array.apply(null, Array(5)).map((e, i) => {
@@ -69,22 +72,22 @@ function GameScreen() {
   }, [reels]);
 
   useEffect(() => {
-    window.setTimeout(() => {
+    if (!spinning) {
       setWinMessage(
         winStatus[1] > 2 ? `You won ${winStatus[1]} ${winStatus[0]}s!` : "Better luck next time"
       );
       if (winStatus[1] > 2) {
-        dispatch(betWon(bet * (winStatus[1] - 2)));
+        dispatch(betWon(bet * (winStatus[1] - 1)));
       } else {
         dispatch(betLost());
       }
-    }, 10500);
-  }, [winStatus, bet]);
+    }
+  }, [spinning]);
 
   return (
     <div id="game-container">
       <div id="game-title">
-        <h1>SpinnySpiner</h1>
+        <h1>SpinnySpinner</h1>
         <div>CASH {balance}$</div>
       </div>
 

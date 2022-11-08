@@ -1,43 +1,45 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { platform } from 'os';
+;
 
 export interface PotState {
-    balance: number;
-    bet: number;
+  balance: number;
+  bet: number;
 }
 
 const initialState: PotState = {
-    balance: 1000,
-    bet: 0,
+  balance: 1000,
+  bet: 0,
 
 }
 
 export const potSlice = createSlice({
-    name: 'pot',
-    initialState,
-    reducers: {
-        deposit: (state, action: PayloadAction<number>) => {
-            state.balance += action.payload;
-        },
-        withdraw: (state, action: PayloadAction<number>) => {
-            state.balance -= action.payload;
-        },
-        placeBet: (state, action: PayloadAction<number>) => {
-            state.balance -= action.payload
-            state.bet += action.payload
-          },
-          betWon: (state, action: PayloadAction<number>) => {
-            state.bet = 0
-            state.balance += action.payload
-          },
-          betLost: (state) => {
-            state.bet = 0
-          }
-        },
-      })
+  name: 'pot',
+  initialState,
+  reducers: {
+    deposit: (state, action: PayloadAction<number>) => {
+      state.balance += action.payload;
+    },
+    withdraw: (state, action: PayloadAction<number>) => {
+      state.balance -= action.payload;
+    },
+    placeBet: (state, action: PayloadAction<number>) => {
+      if (state.balance - action.payload >= 0) {
+        state.balance -= action.payload
+        state.bet += action.payload
+      }
+    },
+    betWon: (state, action: PayloadAction<number>) => {
+      state.bet = 0
+      state.balance += action.payload
+    },
+    betLost: (state) => {
+      state.bet = 0
+    }
+  },
+})
 
-      
+
 export const { deposit, withdraw, placeBet, betWon, betLost } = potSlice.actions
 
 export default potSlice.reducer
