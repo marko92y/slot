@@ -1,4 +1,4 @@
-![alt text](https://github.com/marko92y/slot/blob/main/src/assets/slot.png?raw=true)
+![alt text](https://github.com/marko92y/slot/blob/main/src/assets/slot_mashine.png?raw=true)
 
 ![alt text](https://github.com/marko92y/slot/blob/main/src/assets/tokens.png?raw=true) 
 Commenting out tokens increases the chances of winning.
