@@ -37,7 +37,7 @@ const [
   Gift,
   Watermelon,
 ] = [
-  (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: crown, ...props }),
+  (props: DisplayObjectProps<Sprite>) => SlotToken({ textureLink: crown, ...props }),
   (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: grape, ...props }),
   (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: bell, ...props }),
   (props: DisplayObjectProps<PIXI.Sprite>) => SlotToken({ textureLink: heart, ...props }),
